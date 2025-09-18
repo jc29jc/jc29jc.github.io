@@ -3,9 +3,33 @@
 --background: #040916;
 --primary: #05abdd;
 --secondary: #310ad7;
---accent: #1aa2d8;
+--accent: #00ffd4;
+
 }
+
 body {
     color: var(--text);
     background: var(--background);
+    font-family: "economica"
+}
+
+h3 {
+    color: var(--primary)
+}em {
+    background: var(--accent)
+}
+
+li::marker {
+    color: var(--secondary)
+}
+
+img {
+    padding: 4px;
+    border: 4px solid var(--secondary);
+    border-radius: 16px;
+    background: var(--accent);
+}
+
+audio {
+    background: var(--primary)
 }
