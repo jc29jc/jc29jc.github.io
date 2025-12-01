@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class.Project</title>
 </head>
+
 <body>
-    
+    <h1>Theme Switcher Class project</h1>
 
+    <div>
+        Background Color:
+        <select id="backgroundSelect">
+            <option value="white">White</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="lightpink">Light Pink</option>
+            <option value="black">Black</option>
+        </select>
+    </div>
 
+    <div>
+        Font Color:
+        <select id="fontColorSelect">
+            <option value="black">Black</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="white">White</option>
+        </select>
+    </div>
 
+    <div>
+        Font Size:
+        <input type="range" id="fontSizeSlider" min="10" max="40" value="16">
+    </div>
+
+    <div>
+        <button id="resetBtn">Reset Theme</button>
+    </div>
+
+    <script>
+        let backgroundSelect = document.getElementById("backgroundSelect");
+        let fontColorSelect = document.getElementById("fontColorSelect");
+        let fontSizeSlider = document.getElementById("fontSizeSlider");
+        let fontSizeValue = document.getElementById("fontSizeValue");
+        let resetButton = document.getElementById("resetButton");
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = backgroundSelect.value;
+        }
+
+        function changeFontColor() {
+            document.body.style.color = fontColorSelect.value;
+        }
+
+        function changeTextSize() {
+            let size = fontSizeSlider.value;
+            document.body.style.fontSize = size + "px";
+            fontSizeValue.textContent = size;
+        }
+
+        backgroundSelect.addEventListener("change", changeBackgroundColor);
+        fontColorSelect.addEventListener("change", changeFontColor);
+        fontSizeSlider.addEventListener("input", changeTextSize);
+
+        resetButton.addEventListener("click", function () {
+            backgroundSelect.value = "white";
+            fontColorSelect.value = "black";
+            fontSizeSlider.value = 20;
+            fontSizeValue.textContent = 20;
+
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.body.style.fontSize = "20px";
+        });
+
+    </script>
 
 
 
     <a href="index.html">index.html</a>
 </body>
+
 </html>
